@@ -60,7 +60,9 @@ var tekenAlles = function () {
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
   ellipse(spelerX, spelerY, 10, 10);
-
+  rect (spelerX,spelerY+40, 30,30) ;
+  fill("black");
+  
   // punten en health
 
 };
@@ -100,6 +102,7 @@ function draw() {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
+    speler();
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
