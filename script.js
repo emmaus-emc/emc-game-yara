@@ -59,8 +59,10 @@ var tekenAlles = function () {
   fill("white");
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
-  rect (spelerX,spelerY+40, 30,30) ;
+  ellipse(spelerX, spelerY-15, 10, 10);
+  ellipse (spelerX,spelerY, 20,20) ; // romp
+  rect (spelerX-10,spelerY+10, 10,10) ; // rechts
+  rect (spelerX,spelerY+10, 10,10) ; // links
   fill("black");
   
   // punten en health
