@@ -23,8 +23,8 @@ var KEY_DOWN = 40;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
-var vijandX = 300; // x-positie van speler
-var vijandY = 300; // y-positie van speler
+var vijandX = 420; // x-positie van speler
+var vijandY = 420; // y-positie van speler
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -35,6 +35,14 @@ var vijandY = 300; // y-positie van speler
  */
 var beweegAlles = function () {
   // vijand
+ 
+  vijandY = vijandY + 10;
+  if (vijandY > 720)
+   vijandY=0;
+  
+
+ 
+
 
   // kogel
 
