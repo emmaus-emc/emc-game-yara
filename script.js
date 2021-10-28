@@ -35,13 +35,13 @@ var vijandY = 420; // y-positie van speler
  */
 var beweegAlles = function () {
   // vijand
- 
+
   vijandY = vijandY + 10;
   if (vijandY > 720)
-   vijandY=0;
-  
+    vijandY = 0;
 
- 
+
+
 
 
   // kogel
@@ -51,11 +51,11 @@ var beweegAlles = function () {
     spelerX = spelerX - 10;
   }
 
-if (keyIsDown(KEY_RIGHT)) {
+  if (keyIsDown(KEY_RIGHT)) {
     spelerX = spelerX + 10;
   }
 
-if (keyIsDown(KEY_UP)) {
+  if (keyIsDown(KEY_UP)) {
     spelerY = spelerY - 10;
   }
 
@@ -63,9 +63,14 @@ if (keyIsDown(KEY_UP)) {
     spelerY = spelerY + 10;
   }
 
-
-
+  if ((vijandX - spelerX) < 50 &&
+    (vijandX - spelerX) > -50 &&
+    (vijandY - spelerY) < 50 &&
+    (vijandY - spelerY) > -50) {
+    console.log("botsing")
+  }
 };
+
 
 /**
  * Checkt botsingen
@@ -85,10 +90,10 @@ var verwerkBotsing = function () {
 var tekenAlles = function () {
   // achtergrond
   fill("green");
-  rect(0,0,1280,720);
+  rect(0, 0, 1280, 720);
   // vijand
-fill ("blue");
-rect (vijandX + 50, vijandY + 50, 30,30);
+  fill("blue");
+  rect(vijandX + 50, vijandY + 50, 30, 30);
 
   // kogel
 
