@@ -26,10 +26,10 @@ var spelerY = 600; // y-positie van speler
 var vijandX = 420; // x-positie van speler
 var vijandY = 220; // y-positie van speler
 
-var vijandX1 = 220; // x-positie van speler
+var vijandX1 = 270; // x-positie van speler
 var vijandY1 = 220; // y-positie van speler
 
-var vijandX2 = 620; // x-positie van speler
+var vijandX2 = 570; // x-positie van speler
 var vijandY2 = 220; // y-positie van speler
 
 var Health = 100;
