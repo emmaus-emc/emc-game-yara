@@ -24,8 +24,15 @@ var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
 var vijandX = 420; // x-positie van speler
-var vijandY = 420; // y-positie van speler
+var vijandY = 220; // y-positie van speler
 
+var vijandX1 = 220; // x-positie van speler
+var vijandY1 = 220; // y-positie van speler
+
+var vijandX2 = 620; // x-positie van speler
+var vijandY2 = 220; // y-positie van speler
+
+var Health = 100;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -40,6 +47,13 @@ var beweegAlles = function () {
   if (vijandY > 720)
     vijandY = 0;
 
+  vijandY1 = vijandY1 + 10;
+  if (vijandY1 > 720)
+    vijandY1 = 0;
+
+  vijandY2 = vijandY2 + 10;
+  if (vijandY2 > 720)
+    vijandY2 = 0;
 
 
 
@@ -68,8 +82,21 @@ var beweegAlles = function () {
     (vijandY - spelerY) < 50 &&
     (vijandY - spelerY) > -50) {
     console.log("botsing");
-     Health = 100;
-      Health= Health- 1;
+    Health = Health - 1;
+  }
+  if ((vijandX1 - spelerX) < 50 &&
+    (vijandX1 - spelerX) > -50 &&
+    (vijandY1 - spelerY) < 50 &&
+    (vijandY1 - spelerY) > -50) {
+    console.log("botsing");
+    Health = Health - 1;
+  }
+  if ((vijandX2 - spelerX) < 50 &&
+    (vijandX2 - spelerX) > -50 &&
+    (vijandY2 - spelerY) < 50 &&
+    (vijandY2 - spelerY) > -50) {
+    console.log("botsing");
+    Health = Health - 1;
   }
 };
 
@@ -95,8 +122,9 @@ var tekenAlles = function () {
   rect(0, 0, 1280, 720);
   // vijand
   fill("blue");
-  rect(vijandX , vijandY, 30, 30);
-
+  rect(vijandX, vijandY, 30, 30);
+  rect(vijandX1, vijandY1, 30, 30);
+  rect(vijandX2, vijandY2, 30, 30);
   // kogel
 
   // speler
@@ -113,9 +141,9 @@ var tekenAlles = function () {
   fill("black");
 
   // punten en health
-textSize(32);
-fill("black");
-text('Health', 10, 30);
+  textSize(32);
+  fill("black");
+  text('health ' + Health, 10, 30);
 };
 
 /**
