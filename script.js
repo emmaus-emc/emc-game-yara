@@ -67,7 +67,9 @@ var beweegAlles = function () {
     (vijandX - spelerX) > -50 &&
     (vijandY - spelerY) < 50 &&
     (vijandY - spelerY) > -50) {
-    console.log("botsing")
+    console.log("botsing");
+     Health = 100;
+      Health= Health- 1;
   }
 };
 
@@ -93,7 +95,7 @@ var tekenAlles = function () {
   rect(0, 0, 1280, 720);
   // vijand
   fill("blue");
-  rect(vijandX + 50, vijandY + 50, 30, 30);
+  rect(vijandX , vijandY, 30, 30);
 
   // kogel
 
@@ -111,7 +113,9 @@ var tekenAlles = function () {
   fill("black");
 
   // punten en health
-
+textSize(32);
+fill("black");
+text('Health', 10, 30);
 };
 
 /**
