@@ -54,7 +54,7 @@ var beweegAlles = function () {
   vijandY2 = vijandY2 + 10;
   if (vijandY2 > 720)
     vijandY2 = 0;
-    
+
 
 
 
@@ -76,35 +76,19 @@ var beweegAlles = function () {
 
   if (keyIsDown(KEY_DOWN)) {
     spelerY = spelerY + 10;
-  
+
   }
 
-  if ((vijandX - spelerX) < 50 &&
-    (vijandX - spelerX) > -50 &&
-    (vijandY - spelerY) < 50 &&
-    (vijandY - spelerY) > -50) {
-    console.log("botsing");
-    Health = Health - 1;
-  }
-  if ((vijandX1 - spelerX) < 50 &&
-    (vijandX1 - spelerX) > -50 &&
-    (vijandY1 - spelerY) < 50 &&
-    (vijandY1 - spelerY) > -50) {
-    console.log("botsing");
-    Health = Health - 1;
-  }
-  if ((vijandX2 - spelerX) < 50 &&
-    (vijandX2 - spelerX) > -50 &&
-    (vijandY2 - spelerY) < 50 &&
-    (vijandY2 - spelerY) > -50) {
-    console.log("botsing");
-    Health = Health - 1;
+  for (var a = 0; a < 4; a = a + 1) {
+    if ((vijandX + a * 150 - spelerX) < 50 &&
+      (vijandX + a * 150 - spelerX) > -50 &&
+      (vijandY  - spelerY) < 50 &&
+      (vijandY - spelerY) > -50) {
+      console.log("botsing");
+      Health = Health - 1;
+    }
   }
 };
-
-
-
-
 
 /**
  * Checkt botsingen
@@ -127,12 +111,13 @@ var tekenAlles = function () {
   rect(0, 0, 1280, 720);
   // vijand
   fill("blue");
-  for (var i=0; i<3; i=i+1) {
-      rect(vijandX+i*150, vijandY, 30, 30);
+  for (var i = 0; i < 3; i = i + 1) {
+    rect(vijandX + i * 150, vijandY, 30, 30);
   }
   // kogel
+ellipse(500, 500, 30, 30);
 
-  // speler
+  //i speler
 
 
 
@@ -144,6 +129,8 @@ var tekenAlles = function () {
   rect(spelerX - 10, spelerY + 10, 10, 10); // rechts
   rect(spelerX, spelerY + 10, 10, 10); // links
   fill("black");
+
+  
 
   // punten en health
   textSize(32);
