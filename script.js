@@ -23,10 +23,10 @@ var KEY_DOWN = 40;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
-var vijandX = 420; // x-positie van speler
+var vijandX = 270; // x-positie van speler
 var vijandY = 220; // y-positie van speler
 
-var vijandX1 = 270; // x-positie van speler
+var vijandX1 = 420; // x-positie van speler
 var vijandY1 = 220; // y-positie van speler
 
 var vijandX2 = 570; // x-positie van speler
@@ -54,6 +54,7 @@ var beweegAlles = function () {
   vijandY2 = vijandY2 + 10;
   if (vijandY2 > 720)
     vijandY2 = 0;
+    
 
 
 
@@ -75,6 +76,7 @@ var beweegAlles = function () {
 
   if (keyIsDown(KEY_DOWN)) {
     spelerY = spelerY + 10;
+  
   }
 
   if ((vijandX - spelerX) < 50 &&
@@ -101,6 +103,9 @@ var beweegAlles = function () {
 };
 
 
+
+
+
 /**
  * Checkt botsingen
  * Verwijdert neergeschoten vijanden
@@ -122,9 +127,9 @@ var tekenAlles = function () {
   rect(0, 0, 1280, 720);
   // vijand
   fill("blue");
-  rect(vijandX, vijandY, 30, 30);
-  rect(vijandX1, vijandY1, 30, 30);
-  rect(vijandX2, vijandY2, 30, 30);
+  for (var i=0; i<3; i=i+1) {
+      rect(vijandX+i*150, vijandY, 30, 30);
+  }
   // kogel
 
   // speler
